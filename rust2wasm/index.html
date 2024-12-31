@@ -1,0 +1,20 @@
+<!--用于在浏览器中测试wasm文件-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wasm Test</title>
+    <script type="module">
+        // 导入生成的 JavaScript 文件
+        import init, { add } from './pkg/app2.js';
+
+        // 初始化 Wasm 模块
+        init().then(() => {
+            // 调用 Wasm 模块中的 add 函数
+            console.log(add(4, 3)); // 输出 5
+        });
+    </script>
+</head>
+<body>
+    <h1>Wasm Test</h1>
+</body>
+</html>
